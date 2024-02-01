@@ -46,12 +46,47 @@
     <div class="content-container" style="padding: 20px 5px;">
         <h1>Hammer</h1>
         <hr>
-        <div id="hammerTable">
-            <!-- just fill this with JavaScript from Backend as a table -->
+
+        <button class="btn btn-success" id="getHammered">Get All</button>
+
+        <!-- Collapsible Table -->
+        <div class="accordion" id="hammerAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="tableHeading">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#hammerTableCollapse" aria-expanded="true" aria-controls="hammerTableCollapse">
+                        Hammer Table
+                    </button>
+                </h2>
+                <div id="hammerTableCollapse" class="accordion-collapse collapse show" aria-labelledby="tableHeading"
+                     data-bs-parent="#hammerAccordion">
+                    <div class="accordion-body">
+                        <div id="hammerTable">
+                            <!-- just fill this with JavaScript from Backend as a table -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <button class="btn btn-success" id="getHammered">Get</button>
+        <!-- Form to post a new hammer -->
+        <form id="postHammerForm">
+            <div class="mb-3">
+                <label for="bezeichnung" class="form-label">Bezeichnung</label>
+                <input type="text" class="form-control" id="bezeichnung" required>
+            </div>
+            <div class="mb-3">
+                <label for="preis" class="form-label">Preis</label>
+                <input type="number" class="form-control" id="preis" required>
+            </div>
+            <div class="mb-3">
+                <label for="quality" class="form-label">Quality</label>
+                <input type="text" class="form-control" id="quality" required>
+            </div>
 
+        </form>
+    </div>
+        <button class="btn btn-primary" id="postHammered">Post</button>
         <button class="btn btn-light" disabled>Just a disabled button</button>
     </div>
 
